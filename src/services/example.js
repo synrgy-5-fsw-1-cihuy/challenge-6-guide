@@ -4,10 +4,10 @@ const { generateAccessToken } = require("../utils/jwt");
 
 exports.register = async (userData) => {
   try {
-    const { email, password } = userData;
+    const { name, email, password } = userData;
 
-    if (!email || !password) {
-      throw new Error("Email and password are required");
+    if (!name || !email || !password) {
+      throw new Error("Name, email and password are required");
     }
 
     const user = await UserRepository.findUserByEmail(email);
@@ -23,7 +23,9 @@ exports.register = async (userData) => {
       password: hashedPassword,
     });
 
-    return newUser;
+    return {
+      email: newUser.email,
+    };
   } catch (error) {
     throw error;
   }
@@ -51,7 +53,7 @@ exports.login = async (userData) => {
 
     const token = generateAccessToken({ id: user.id });
 
-    return { user, token };
+    return { token };
   } catch (error) {
     throw error;
   }
