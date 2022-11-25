@@ -1,0 +1,72 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Swagger",
+    "description": "An example of using the Swagger specification to describe a simple API that manages user authentication."
+  },
+  "basePath": "/",
+  "paths": {
+    "/register": {
+      "summary": "Create user into the system",
+      "consumes": ["application/json"],
+      "produces": ["application/json"],
+      "parameters": [
+        {
+          "in": "body",
+          "name": "name",
+          "required": true
+        },
+        {
+          "in": "body",
+          "name": "email",
+          "required": true
+        },
+        {
+          "in": "body",
+          "name": "password",
+          "required": true
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "successful operation"
+        },
+        "400": {
+          "description": "Invalid user supplied"
+        },
+        "409": {
+          "description": "User already exists"
+        }
+      }
+    }
+  },
+  "/login": {
+    "summary": "Logs user into the system",
+    "consumes": ["application/json"],
+    "produces": ["application/json"],
+    "parameters": [
+      {
+        "in": "body",
+        "name": "email",
+        "required": true
+      },
+      {
+        "in": "body",
+        "name": "password",
+        "required": true
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "successful operation"
+      },
+      "400": {
+        "description": "Invalid user supplied"
+      },
+      "404": {
+        "description": "User not found"
+      }
+    }
+  }
+}

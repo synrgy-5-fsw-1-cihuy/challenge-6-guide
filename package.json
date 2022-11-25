@@ -1,0 +1,35 @@
+{
+  "name": "challenge-6-guide",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/server",
+    "dev": "nodemon src/server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/synrgy-5-fsw-1-cihuy/challenge-6-guide.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/synrgy-5-fsw-1-cihuy/challenge-6-guide/issues"
+  },
+  "homepage": "https://github.com/synrgy-5-fsw-1-cihuy/challenge-6-guide#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "cloudinary": "^1.32.0",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0",
+    "pg": "^8.8.0",
+    "sequelize": "^6.25.8"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.3",
+    "nodemon": "^2.0.20",
+    "sequelize-cli": "^6.5.2"
+  }
+}
