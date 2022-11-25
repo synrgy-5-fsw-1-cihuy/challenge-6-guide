@@ -2,7 +2,7 @@
 
 This is a simple REST API with Repository Pattern.
 
-Please read the [Guide](./GUIDE.md) to understand the application workflow.
+Please read the [GUIDE](./GUIDE.md) to understand the application workflow.
 
 ## Installation
 
@@ -32,16 +32,20 @@ npx sequelize-cli db:seed:all
 
 # Repository Pattern
 
-## What is Repository Pattern?
+## Main Concept of Repository Pattern
 
-Repository pattern is a design pattern that provides an abstraction layer between the domain and data mapping layers using a repository interface. This pattern can be implemented using different technologies like Hibernate, Spring Data, etc.
+Request -> Route -> Controller -> Service -> Repository -> Database -> Repository -> Service -> Controller -> Response
 
-## Why Repository Pattern?
+### Controller
 
-- It provides a clean separation and more robust design between the domain and data mapping layers.
-- It provides the same set of operations to the domain layer, hiding the implementation details of the persistence framework.
-- It promotes the use of unit of work and domain-driven design patterns.
+- Handle request and response
+- Call service
 
-## How Repository Pattern Works?
+### Service
 
-- The repository pattern is a layer of abstraction between the domain model and the data mapping layer.
+- Handle business logic
+- Call repository
+
+### Repository
+
+- Handle database query
