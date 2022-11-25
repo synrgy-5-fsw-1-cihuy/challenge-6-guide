@@ -20,38 +20,112 @@ The application workflow is as follows:
 14. The controller returns the result using the response object to the app.
 15. The app sends the response to the client.
 
-## How do I add a new route to the application?
+# Guidelines
 
-1. Create a new route in the `src/routes/index.js` file.
-2. Create a new controller in the `src/controllers` folder and add it to the `src/routes/index.js` file.
+Not all of the requirements must be implemented. You can choose which one you want to implement. You can also add more features if you want. The important thing is that you can explain your code and the features you have implemented.
 
-## How do I add a new controller to the application?
+## Notes
 
-1. Create a new file in the `src/controllers` folder. The name of the file should be the name of the controller. For example, if the controller is `UserController`, the name of the file should be `user.js`.
-2. Import the controller in the `src/routes` file and add it to the route.
+- Use Express for framework
+- Use Sequelize for ORM
+- Use PostgreSQL for database
+- Use JWT (jsonwebtoken) for authentication
+- Use bcrypt for hashing password
+- Create OpenAPI documentation using Swagger
 
-## How do I add a new service to the application?
+## Authentication and Authorization
 
-1. Create a new file in the `src/services` folder. The name of the file should be the name of the service. For example, if the service is `UserService`, the name of the file should be `user.js`.
-2. Import the service in the `src/controllers` file and add it to the controller.
+- Create authentication feature using JWT
+- Create middleware for authentication
+- Create middleware for authorization
+- Add authentication and authorization to the routes
 
-## How do I add a new repository to the application?
+## Models
 
-1. Create a new file in the `src/repositories` folder. The name of the file should be the name of the repository. For example, if the repository is `UserRepository`, the name of the file should be `user.js`.
-2. Import the repository in the `src/services` file and add it to the service.
+### User
 
-## How do I add a new model to the application?
+- id
+- name
+- email
+- password
+- role
+- createdAt
+- updatedAt
 
-1. Generate a new model using the `sequelize-cli` tool by running the following command:
+### Car
 
-```bash
-npx sequelize-cli model:generate --name User --attributes firstName:string,lastName:string,email:string,password:string
-```
+- id
+- name
+- price / cost / cost per day
+- available
+- capacity
+- etc, use your imagination or case in the previous challenge
 
-2. It will generate a new file in the `src/database/models` folder. The name of the file should be the name of the model. For example, if the model is `User`, the name of the file should be `user.js`.
-3. Import the model in the `src/repositories` file and add it to the repository.
+## API Documentation
 
-## How do I add a new middleware to the application?
+### User
 
-1. Create a new file in the `src/middlewares` folder. The name of the file should be the name of the middleware. For example, if the middleware is `AuthMiddleware`, the name of the file should be `auth.js`.
-2. Import the middleware in the `src/routes` file and add it to the route.
+**Register**
+
+A user can register as a member.
+
+- URL: /auth/register
+- Method: POST
+
+**Login**
+
+A user can login as superadmin, admin, or member.
+
+- URL: /auth/login
+- Method: POST
+
+**Add Admin**
+
+A superadmin can add a new admin or maybe can manage user roles.
+
+- URL: /users/role
+- Method: POST
+
+**Get Current User**
+
+Get current user profile from token.
+
+- URL: /users/me
+- Method: GET
+
+### Cars
+
+**Add Car**
+
+Admin and superadmin can add new car.
+
+- URL: /cars
+- Method: POST
+
+**Update Car**
+
+Admin and superadmin can update car.
+
+- URL: /cars/:id
+- Method: PUT
+
+**Delete Car**
+
+Admin and superadmin can delete car.
+
+- URL: /cars/:id
+- Method: DELETE
+
+**Get All Cars**
+
+Admin, superadmin, and member can get all cars.
+
+- URL: /cars
+- Method: GET
+
+**Get Car By Id**
+
+Admin, superadmin, and member can get car by id.
+
+- URL: /cars/:id
+- Method: GET
