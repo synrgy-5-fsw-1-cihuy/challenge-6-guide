@@ -2,7 +2,9 @@
 
 This is a simple REST API with Repository Pattern.
 
-Please read the [GUIDE](./GUIDE.md) to understand the application workflow.
+Please read the [CASE](CASE.md) file to understand the problem.
+
+Please read the [GUIDE](./guides/README.md) file to understand the solution.
 
 ## Installation
 
