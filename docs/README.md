@@ -1,6 +1,6 @@
 # API Documentation
 
-This folder contains the API documentation for the challenge.
+This folder contains the API documentation for the challenge. WORK IN PROGRESS.
 
 ## OpenAPI
 
@@ -13,3 +13,9 @@ Postman is a collaboration platform for API development. Postman's features simp
 ## Swagger UI
 
 Swagger UI is an open-source tool that renders the OpenAPI specification as interactive documentation. It allows anyone — be it your development team or your end consumers — to visualize and interact with the API’s resources without having any of the implementation logic in place. It’s automatically generated from your OpenAPI definition.
+
+# Tools
+
+[Swagger Editor](https://editor.swagger.io/)
+
+I am not sure if this is the right way to do it. I am new to this. Please let me know if I am doing it wrong. Thanks in advance.
